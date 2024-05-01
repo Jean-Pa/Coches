@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class MarcaCoche {
+public class MarcaCochePojo {
 
     private Integer id;
     private String description;
