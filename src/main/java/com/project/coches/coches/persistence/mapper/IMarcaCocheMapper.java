@@ -10,13 +10,26 @@ import com.project.coches.coches.persistence.entity.MarcaCocheEntity;
 
 @Mapper(componentModel = "spring")
 public interface IMarcaCocheMapper {
+    /*
+     * Convierte una entidad a un pojo de marca Coche
+     */
+    /*
+     * @Mappings({
+     * 
+     * @Mapping(source = "id", target = "id"),
+     * 
+     * @Mapping(source = "description", target = "description")
+     * })
+     */
 
-    @Mappings({
-            @Mapping(source = "id", target = "id"),
-            @Mapping(source = "description", target = "description")
-    })
+    @Mapping(source = "id", target = "id")
+    @Mapping(source = "description", target = "description")
+
     MarcaCochePojo toMarcaCochePojo(MarcaCocheEntity marcaCocheEntity);
 
+    /*
+     * Convierte un pojo a una entidad de marca coche
+     */
     @InheritInverseConfiguration
     MarcaCocheEntity toMarcaCocheEntity(MarcaCochePojo marcaCochePojo);
 
